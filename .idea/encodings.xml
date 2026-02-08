@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-biz-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-biz-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-apollo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-apollo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-develop/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-develop/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-mqtt-broker/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-mqtt-broker/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-mqtt-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-mqtt-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-rabbit-listener/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-rabbit-listener/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-rabbit-publisher/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-rabbit-publisher/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-seata-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-seata-order/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-seata-storage/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-seata-storage/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-sharding-jdbc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-sharding-jdbc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-xxl-job/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/blade-xxl-job/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-example/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service-api/blade-demo-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service-api/blade-demo-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service-api/xinxing-demo-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service-api/xinxing-demo-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service/blade-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service/blade-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service/xinxing-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service/xinxing-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service/xinxing-hkvision/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/blade-service/xinxing-hkvision/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bladex-biz/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

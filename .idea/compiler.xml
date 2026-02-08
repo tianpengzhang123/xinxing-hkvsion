@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="xinxing-demo" />
+        <module name="blade-biz-common" />
+        <module name="blade-xxl-job" />
+        <module name="blade-demo" />
+        <module name="blade-mqtt-broker" />
+        <module name="blade-rabbit-publisher" />
+        <module name="blade-seata-storage" />
+        <module name="xinxing-hkvision" />
+        <module name="blade-seata-order" />
+        <module name="blade-gateway" />
+        <module name="blade-sharding-jdbc" />
+        <module name="blade-demo-api" />
+        <module name="blade-develop" />
+        <module name="blade-apollo" />
+        <module name="blade-rabbit-listener" />
+        <module name="blade-mqtt-client" />
+        <module name="xinxing-demo-api" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BladeX-Biz" options="-parameters" />
+      <module name="blade-apollo" options="-parameters" />
+      <module name="blade-biz-common" options="-parameters" />
+      <module name="blade-demo" options="-parameters" />
+      <module name="blade-demo-api" options="-parameters" />
+      <module name="blade-develop" options="-parameters" />
+      <module name="blade-example" options="-parameters" />
+      <module name="blade-gateway" options="-parameters" />
+      <module name="blade-mqtt-broker" options="-parameters" />
+      <module name="blade-mqtt-client" options="-parameters" />
+      <module name="blade-rabbit-listener" options="-parameters" />
+      <module name="blade-rabbit-publisher" options="-parameters" />
+      <module name="blade-seata-order" options="-parameters" />
+      <module name="blade-seata-storage" options="-parameters" />
+      <module name="blade-service" options="-parameters" />
+      <module name="blade-service-api" options="-parameters" />
+      <module name="blade-sharding-jdbc" options="-parameters" />
+      <module name="blade-xxl-job" options="-parameters" />
+      <module name="xinxing-demo" options="-parameters" />
+      <module name="xinxing-demo-api" options="-parameters" />
+      <module name="xinxing-hkvision" options="-parameters" />
+    </option>
+  </component>
+</project>
