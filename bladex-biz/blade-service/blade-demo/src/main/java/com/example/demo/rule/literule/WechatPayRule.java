@@ -1,0 +1,26 @@
+package com.example.demo.rule.literule;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springblade.core.literule.annotation.LiteRuleComponent;
+import org.springblade.core.literule.core.RuleComponent;
+import com.example.demo.rule.literule.context.OrderContext;
+
+/**
+ * WechatPayRule
+ *
+ * @author BladeX
+ */
+@Slf4j
+@LiteRuleComponent(id = "wechatPayRule")
+public class WechatPayRule extends RuleComponent {
+
+	@Override
+	protected void process() {
+		OrderContext context = getContextBean(OrderContext.class);
+		log.info("[规则4-微信] 处理微信支付：订单号={}, 金额={}",
+			context.getOrderId(), context.getAmount());
+
+		// 模拟支付处理
+		context.setStatus("PAID");
+	}
+}

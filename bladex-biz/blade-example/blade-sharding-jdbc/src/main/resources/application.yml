@@ -1,0 +1,18 @@
+## server
+server:
+  port: 8701
+
+spring:
+  #sharding通用配置
+  shardingsphere:
+    mode:
+      #内存模式
+      type: Standalone
+    props:
+      #是否展示sql
+      sql-show: true
+blade:
+  #开启分库分表自动配置
+  #nacos会覆盖此配置，需要在nacos也配置为true
+  sharding:
+    enabled: true

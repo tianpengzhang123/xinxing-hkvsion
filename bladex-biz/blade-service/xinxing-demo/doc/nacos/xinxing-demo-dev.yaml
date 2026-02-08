@@ -1,0 +1,19 @@
+#自定义配置
+demo:
+  name: xinxing-demo-name
+
+#放行配置
+blade:
+  secure:
+    skip-url:
+      - /demo/**
+  datasource:
+    demo:
+      master:
+        url: jdbc:mysql://10.226.16.64:3306/bladex_dev?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+        username: root
+        password: BladeX_Mysql
+      slave:
+        url: jdbc:mysql://localhost:3306/bladex_dev?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+        username: bladex_dev
+        password: bladex_dev

@@ -1,0 +1,86 @@
+#mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:com/xinxing/**/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.xinxing.**.entity
+
+#swagger扫描路径配置
+swagger:
+  base-packages:
+    - org.springblade
+    - com.xinxing
+
+#oss配置
+oss:
+  enabled: true
+  name: minio
+  tenant-mode: false
+  endpoint: http://127.0.0.1:9000
+  access-key: D99KGE6ZTQXSATTJWU24
+  secret-key: QyVqGnhIQQE734UYSUFlGOZViE6+ZlDEfUG3NjhJ
+  bucket-name: bladex
+
+#blade配置
+blade:
+  #本地文件上传
+  file:
+    remote-mode: true
+    upload-domain: http://localhost:8999
+
+  #安全框架配置
+  secure:
+    enabled: false  # 禁用安全验证
+    #严格模式
+    #缺失令牌字段则取消授权
+    strict-token: false
+    #缺失请求头则取消授权
+    strict-header: false
+    #接口放行
+    skip-url:
+      - /test/**
+      - /blade-visual/**
+      - /ab-bpm/sys/sysFile/view/**
+      - /blade-auth/innerEndpoint/userSessionApi/getSession
+      - /blade-system/tenant/allTenant
+      - /hkvision/**
+      - /xinxing-hkvision/**
+      - /favicon.ico
+    #授权认证配置
+    auth:
+      - method: ALL
+        pattern: /chat/wechat/**
+        expression: "hasAuth()"
+      - method: ALL
+        pattern: /chat/qq/**
+        expression: "hasStrictToken()"
+      - method: ALL
+        pattern: /chat/ding/**
+        expression: "hasStrictHeader()"
+      - method: ALL
+        pattern: /dashboard/notice
+        expression: "hasMenu('notice')"
+      - method: POST
+        pattern: /dashboard/upload
+        expression: "hasTimeAuth(9, 17)"
+      - method: POST
+        pattern: /dashboard/submit
+        expression: "hasAnyRole('administrator', 'admin', 'user')"
+    #基础认证配置
+    basic:
+      - method: ALL
+        pattern: /dashboard/info
+        username: "blade"
+        password: "blade"
+    #动态签名认证配置
+    sign:
+      - method: ALL
+        pattern: /dashboard/sign
+        crypto: "sha1"
+    #多终端认证配置
+    client:
+      - client-id: sword
+        path-patterns:
+          - /sword/**
+      - client-id: saber
+        path-patterns:
+          - /saber/**

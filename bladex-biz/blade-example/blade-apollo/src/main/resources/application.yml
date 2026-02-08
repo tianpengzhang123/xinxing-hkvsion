@@ -1,0 +1,13 @@
+#服务器端口
+server:
+  port: 8508
+
+app:
+  id: blade-apollo
+apollo:
+  #apollo官方文档：https://www.apolloconfig.com/
+  #apollo官方测试地址：http://81.68.181.139 ，账号/密码:apollo/admin
+  meta: http://81.68.181.139:8080
+  bootstrap:
+    enabled: true
+    namespaces: application,common

@@ -1,0 +1,29 @@
+#mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:com/example/**/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.example.**.entity
+
+#swagger扫描路径配置
+swagger:
+  base-packages:
+    - org.springblade
+    - com.example
+
+#oss配置
+oss:
+  enabled: true
+  name: minio
+  tenant-mode: false
+  endpoint: http://127.0.0.1:9000
+  access-key: D99KGE6ZTQXSATTJWU24
+  secret-key: QyVqGnhIQQE734UYSUFlGOZViE6+ZlDEfUG3NjhJ
+  bucket-name: bladex
+
+#blade配置
+blade:
+  #本地文件上传
+  file:
+    remote-mode: true
+    upload-domain: http://localhost:8999
+    remote-path: /usr/share/nginx/html

@@ -1,0 +1,88 @@
+#分库+分表
+spring:
+  #主数据源
+  datasource:
+    # MySql
+    url: jdbc:mysql://localhost:3306/bladex?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  #sharding数据源
+  shardingsphere:
+    datasource:
+      names: ds1,ds2
+      #数据库连接别名
+      ds1:
+        #数据连接池类型
+        type: com.alibaba.druid.pool.DruidDataSource
+        #驱动类型
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        #jdbc地址
+        url: jdbc:mysql://localhost:3306/bladex1?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
+        #数据库账号
+        username: root
+        #数据库密码
+        password: root
+      #数据库连接别名
+      ds2:
+        #数据连接池类型
+        type: com.alibaba.druid.pool.DruidDataSource
+        #驱动类型
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        #jdbc地址
+        jdbc-url: jdbc:mysql://localhost:3306/bladex2?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
+        #数据库账号
+        username: root
+        #数据库密码
+        password: root
+    rules:
+      sharding:
+        #主键生成类型
+        key-generators:
+          snowflake:
+            type: SNOWFLAKE
+        #默认分库策略
+        default-database-strategy:
+          standard:
+            #列名
+            sharding-column: id
+            #算法名
+            sharding-algorithm-name: database-inline
+        tables:
+          #分表代号
+          blade_notice:
+            #实际节点名称，格式为 库名$->{0..n1}.表名$->{0..n2}
+            #ds$->{1..2}.blade_notice_$->{1..2} 代表有 ds1和ds2两个库以及blade_notice_1和blade_notice_2两个表
+            actual-data-nodes: ds$->{1..2}.blade_notice_$->{1..2}
+            #分表策略
+            table-strategy:
+              standard:
+                #分表列名
+                sharding-column: id
+                #分表算法名,不可用下划线
+                sharding-algorithm-name: blade-notice-inline
+            #主键生成策略
+            key-generate-strategy:
+              #主键名
+              column: id
+              #策略算法
+              key-generator-name: snowflake
+        #分库分表算法
+        sharding-algorithms:
+          #分库算法名
+          database-inline:
+            #算法类型
+            type: INLINE
+            props:
+              #算法表达式
+              #表达式写法非常自由，以下配置仅作为参考
+              #ds$->{id % 2 + 1} 代表对id进行取余，根据id的基偶来指向 ds1和ds2
+              algorithm-expression: ds$->{id % 2 + 1}
+          #分表算法名
+          blade-notice-inline:
+            #算法类型
+            type: INLINE
+            props:
+              #算法表达式
+              #表达式写法非常自由，以下配置仅作为参考
+              #blade_notice_$->{id % 2 + 1} 代表对id进行取余，根据id的基偶来指向blade_notice_1和blade_notice_2
+              algorithm-expression: blade_notice_$->{id % 2 + 1}

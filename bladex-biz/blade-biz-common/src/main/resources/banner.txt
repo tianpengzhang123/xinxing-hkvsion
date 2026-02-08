@@ -1,0 +1,8 @@
+${AnsiColor.BLUE}                   __   __ __   __  ______   _____
+${AnsiColor.BLUE}                   \ \ / / \ \ / / |___  /  / ____|
+${AnsiColor.BLUE}                    \ V /   \ V /     / /  | |  __
+${AnsiColor.BLUE}                     > <     > <     / /   | | |_ |
+${AnsiColor.BLUE}                    / . \   / . \   / /__  | |__| |
+${AnsiColor.BLUE}                   /_/ \_\ /_/ \_\ /_____|  \_____|
+
+${AnsiColor.BLUE}:: BladeX :: ${spring.application.name}:${AnsiColor.RED}${blade.env}${AnsiColor.BLUE} :: Running SpringBoot ${spring-boot.version} :: ${AnsiColor.BRIGHT_BLACK}

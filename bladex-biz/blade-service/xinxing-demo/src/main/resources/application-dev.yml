@@ -1,0 +1,49 @@
+#服务器端口
+server:
+  port: 8222
+
+#job服务配置
+#powerjob:
+#  worker:
+#    app-name: xinxing-demo-job
+#    port: 27778
+#    server-address: 10.226.16.79:7700
+#数据源配置
+#spring:
+#  datasource:
+#    url: ${blade.datasource.dev.url}
+#    username: ${blade.datasource.dev.username}
+#    password: ${blade.datasource.dev.password}
+
+spring:
+  #排除DruidDataSourceAutoConfigure
+  autoconfigure:
+    exclude: com.alibaba.druid.spring.boot3.autoconfigure.DruidDataSourceAutoConfigure
+  datasource:
+    dynamic:
+      druid:
+        #通用校验配置
+        validation-query: select 1
+        #启用sql日志拦截器
+        proxy-filters: sqlLogInterceptor
+      #设置默认的数据源或者数据源组,默认值即为master
+      primary: master
+      datasource:
+        master:
+          druid:
+            #独立校验配置
+            validation-query: select 1
+            #oracle校验
+            #validation-query: select 1 from dual
+          url: ${blade.datasource.demo.master.url}
+          username: ${blade.datasource.demo.master.username}
+          password: ${blade.datasource.demo.master.password}
+        slave:
+          druid:
+            #独立校验配置
+            validation-query: select 1
+            #oracle校验
+            #validation-query: select 1 from dual
+          url: ${blade.datasource.demo.slave.url}
+          username: ${blade.datasource.demo.slave.username}
+          password: ${blade.datasource.demo.slave.password}

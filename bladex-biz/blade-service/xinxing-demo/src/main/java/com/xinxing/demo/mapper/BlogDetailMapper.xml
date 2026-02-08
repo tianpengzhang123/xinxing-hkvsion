@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinxing.demo.mapper.BlogDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="blogDetailResultMap" type="com.xinxing.demo.pojo.entity.BlogDetailEntity">
+        <result column="id" property="id"/>
+        <result column="tenant_id" property="tenantId"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_dept" property="createDept"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="status" property="status"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="blog_id" property="blogId"/>
+        <result column="content" property="content"/>
+        <result column="release_time" property="releaseTime"/>
+    </resultMap>
+
+
+    <select id="selectBlogDetailPage" resultMap="blogDetailResultMap">
+        select * from tb_blog_detail where is_deleted = 0
+    </select>
+
+
+    <select id="exportBlogDetail" resultType="com.xinxing.demo.excel.BlogDetailExcel">
+        SELECT * FROM tb_blog_detail ${ew.customSqlSegment}
+    </select>
+
+</mapper>

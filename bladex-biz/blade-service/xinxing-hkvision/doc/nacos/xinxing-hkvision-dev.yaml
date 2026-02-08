@@ -1,0 +1,20 @@
+#自定义配置
+xinxing:
+  name: xinxing-hkvision
+
+#海康威视配置
+hkvision:
+  artemis:
+    host: 127.0.0.1  # Artemis API网关地址
+    appKey: 20469790  # 合作方Key
+    appSecret: lofnD6DbnBllHmk5YOyx  # 合作方Secret
+
+#安全配置
+blade:
+  secure:
+    enabled: false  # 禁用安全验证
+    skip-url:
+      - /hkvision/**
+      - /xinxing-hkvision/**
+      - /artemis/**
+      - /favicon.ico

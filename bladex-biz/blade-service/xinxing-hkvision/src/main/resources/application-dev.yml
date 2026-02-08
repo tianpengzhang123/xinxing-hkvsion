@@ -1,0 +1,58 @@
+#服务器端口
+server:
+  port: 8223
+
+#海康威视配置
+hkvision:
+  artemis:
+    host: 127.0.0.1  # Artemis API网关地址
+    appKey: 20469790  # 合作方Key
+    appSecret: lofnD6DbnBllHmk5YOyx  # 合作方Secret
+
+#blade配置
+blade:
+  #放行配置
+  secure:
+    enabled: false  # 禁用安全验证
+    skip-url:
+      - /hkvision/**
+      - /xinxing-hkvision/**
+      - /artemis/**
+      - /favicon.ico
+    #签名认证配置（可选，如果不配置则使用JWT Token认证）
+
+
+
+#数据源配置
+spring:
+  #排除DruidDataSourceAutoConfigure
+  autoconfigure:
+    exclude: com.alibaba.druid.spring.boot3.autoconfigure.DruidDataSourceAutoConfigure
+  datasource:
+    dynamic:
+      druid:
+        #通用校验配置
+        validation-query: select 1
+        #启用sql日志拦截器
+        proxy-filters: sqlLogInterceptor
+      #设置默认的数据源或者数据源组,默认值即为master
+      primary: master
+      datasource:
+        master:
+          druid:
+            #独立校验配置
+            validation-query: select 1
+            #oracle校验
+            #validation-query: select 1 from dual
+          url: jdbc:mysql://10.226.46.241:3306/blade_learn?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+          username: root
+          password: root
+        slave:
+          druid:
+            #独立校验配置
+            validation-query: select 1
+            #oracle校验
+            #validation-query: select 1 from dual
+          url: jdbc:mysql://10.226.46.241:3306/blade_learn?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+          username: root
+          password: root

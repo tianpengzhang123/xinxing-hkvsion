@@ -1,0 +1,26 @@
+#服务器端口
+server:
+  port: 8223
+
+#数据源配置
+spring:
+  #排除DruidDataSourceAutoConfigure
+  autoconfigure:
+    exclude: com.alibaba.druid.spring.boot3.autoconfigure.DruidDataSourceAutoConfigure
+  datasource:
+    dynamic:
+      druid:
+        #通用校验配置
+        validation-query: select 1
+        #启用sql日志拦截器
+        proxy-filters: sqlLogInterceptor
+      #设置默认的数据源或者数据源组,默认值即为master
+      primary: master
+      datasource:
+        master:
+          druid:
+            #独立校验配置
+            validation-query: select 1
+          url: ${blade.datasource.hkvision.master.url}
+          username: ${blade.datasource.hkvision.master.username}
+          password: ${blade.datasource.hkvision.master.password}
